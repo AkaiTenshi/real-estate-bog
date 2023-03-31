@@ -10,6 +10,7 @@ jobs:
           name: Install dependencies
           command: |
             pip install pipenv
+            pipenv shell
             pipenv install --dev
             pip install pytest
       - run:
