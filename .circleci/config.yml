@@ -12,8 +12,7 @@ jobs:
       - python/install-packages
       - run:
           name: Run server in background
-          command: flask run
-          command: echo $DB_HOST
+          command: flask run && echo $DB_HOST
           background: true
       - run:
           name: Run tests
