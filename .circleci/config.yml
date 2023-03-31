@@ -17,6 +17,7 @@ jobs:
           command: |
             . venv/bin/activate && \
             FLASK_APP=app.py FLASK_ENV=testing flask run --host=0.0.0.0 &
+            sleep 10
       - run:
           name: Run tests
           command: |
