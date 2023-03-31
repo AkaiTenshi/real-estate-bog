@@ -15,12 +15,8 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            echo 'export DB_USERNAME=$DB_USERNAME' >> $BASH_ENV
-            echo 'export DB_PASSWORD=$DB_PASSWORD' >> $BASH_ENV
-            echo 'export DB_HOST=$DB_HOST' >> $BASH_ENV
             flask run
             sleep 30
-          background: true
       - store_artifacts:
           path: server.log
 
