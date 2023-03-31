@@ -11,6 +11,11 @@ jobs:
       - run: echo "Python on CircleCI"
       - python/install-packages
       - run:
+          name: Run server in background
+          command: flask run
+          command: echo $DB_HOST
+          background: true
+      - run:
           name: Run tests
           command: pytest
 
