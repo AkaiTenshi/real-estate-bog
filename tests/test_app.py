@@ -3,7 +3,7 @@ import requests
 
 class TestApp(unittest.TestCase):
     def setUp(self):
-        self.url = "http://localhost:5000"
+        self.url = "http://127.0.0.1:5000"
 
     def test_hello_world(self):
         response = requests.get(f"{self.url}/")
