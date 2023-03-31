@@ -12,17 +12,10 @@ jobs:
       - python/install-packages
       - run:
           name: Start the application
-          command: |
-            source venv/bin/activate
-            export FLASK_APP=app
-            export FLASK_ENV=development
-            flask run --host=0.0.0.0 &
+          command: flask run --host=0.0.0.0 &
       - run:
           name: Run tests
-          command: |
-            source venv/bin/activate
-            pytest tests/
-    parallelism: 2
+          command: pytest
 
 workflows:
   build-and-test:
