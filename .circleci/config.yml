@@ -3,51 +3,16 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/python:3.8.1
-
-    working_directory: ~/repo
-
+      - image: cimg/python:3.8
     steps:
       - checkout
-
-      # Install dependencies
       - run:
           name: Install dependencies
           command: |
-            python3 -m venv venv
-            source venv/bin/activate
-            pip install --upgrade pip
-            pip install -r requirements.txt
+            pip install pipenv
+            pipenv install --dev
 
-      # Run tests
       - run:
           name: Run tests
           command: |
-            source venv/bin/activate
-            pytest tests/
-
-  deploy:
-    machine:
-      enabled: true
-
-    steps:
-      - checkout
-
-      # Install dependencies
-      - run:
-          name: Install dependencies
-          command: |
-            sudo apt-get update
-            sudo apt-get install -y python3-pip
-            sudo pip3 install virtualenv
-            virtualenv venv
-            source venv/bin/activate
-            pip install --upgrade pip
-            pip install -r requirements.txt
-
-      # Deploy to server
-      - run:
-          name: Deploy to server
-          command: |
-            source venv/bin/activate
-            python deploy.py
+            pipenv run python -m pytest tests/test_app.py
