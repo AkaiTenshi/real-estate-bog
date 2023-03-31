@@ -3,26 +3,26 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.8
-    working_directory: /app
+    working_directory: ~/repo
     steps:
       - checkout
-      - run: python3 -m venv venv
+      - run: pip install pipenv
       - run:
           name: Install dependencies
           command: |
-            . venv/bin/activate && \
+            pipenv shell
             pip install -r requirements.txt
       - run:
           name: Start Flask app
           command: |
-            . venv/bin/activate && \
+            pipenv shell
             flask run &
             sleep 30
           background: true
       - run:
           name: Run tests
           command: |
-            . venv/bin/activate && \
+            pipenv shell
             pytest
 
 workflows:
