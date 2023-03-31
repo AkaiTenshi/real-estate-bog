@@ -18,7 +18,7 @@ jobs:
           command: |
             . venv/bin/activate
             export FLASK_APP=app.py
-            flask run --host=127.0.0.1 &
+            flask run --host=127.0.0.1 & --port=5000
           background: true
       - run:
           name: Run tests
