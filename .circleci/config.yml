@@ -22,3 +22,8 @@ jobs:
           command: |
             . venv/bin/activate && \
             pytest
+workflows:
+  build-and-test:
+    jobs:
+      - build
+          background: true
