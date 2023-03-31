@@ -10,10 +10,13 @@ jobs:
       - checkout
       - run: echo "Python on CircleCI"
       - python/install-packages
-      - run: echo $DB_HOST
       - run:
           name: Run server in background
-          command: flask run
+          command: |
+            export DB_USERNAME=$DB_USERNAME
+            export DB_PASSWORD=$DB_PASSWORD
+            export DB_HOST=$DB_HOST
+            flask run
           background: true
       - run:
           name: Run tests

@@ -10,9 +10,9 @@ logger = Logger()
 
 class DB:
     def __init__(self):
-        db_username = os.getenv("DB_USERNAME")
-        db_password = os.getenv("DB_PASSWORD")
-        db_host = os.getenv("DB_HOST")
+        db_username = os.environ['DB_USERNAME']
+        db_password = os.environ['DB_PASSWORD']
+        db_host = os.environ['DB_HOST']
         
         engine_str = f"mysql+pymysql://{db_username}:{db_password}@{db_host}"
         self.engine = create_engine(engine_str)
