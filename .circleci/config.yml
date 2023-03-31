@@ -1,0 +1,26 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.8
+
+    steps:
+      - checkout
+      - run: pip install pipenv
+      - run: pipenv install
+      - run: python -m pytest tests/
+      - run: |
+          if [ "${CIRCLE_BRANCH}" == "main" ]; then
+            docker build -t bog-estate .
+            docker tag bog-estate chmaikos/bog-estate:latest
+            docker push chmaikos/bog-estate:latest
+          fi
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: main
