@@ -11,6 +11,7 @@ jobs:
           command: |
             pip install pipenv
             pipenv install --dev
+            pip install pytest
       - run:
           name: Install requirements
           command: |
