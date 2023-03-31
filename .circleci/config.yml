@@ -22,7 +22,9 @@ jobs:
       - run:
           name: Run tests
           command: pytest
-
+      - store_artifacts:
+          path: server.log
+          
 workflows:
   build-and-test:
     jobs:
