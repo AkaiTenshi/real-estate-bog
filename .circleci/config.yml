@@ -11,8 +11,12 @@ jobs:
           command: |
             pip install pipenv
             pipenv install --dev
-
+      - run:
+          name: Install requirements
+          command: |
+            pip install -r requirements.txt
       - run:
           name: Run tests
           command: |
-            pipenv run python -m pytest tests/test_app.py
+            pipenv run python -m pytest tests/
+
