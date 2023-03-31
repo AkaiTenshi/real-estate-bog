@@ -4,21 +4,11 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.8
+    working_directory: ~/repo
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: |
-            pip install pipenv
-            pipenv shell
-            pipenv install --dev
-            pip install pytest
-      - run:
-          name: Install requirements
-          command: |
-            pip install -r requirements.txt
-      - run:
-          name: Run tests
-          command: |
-            pipenv run python -m pytest tests/
+      - run: virtualenv venv && . venv/bin/activate
+      - run: pip install -r requirements.txt
+      - run: pytest tests/
+
 
