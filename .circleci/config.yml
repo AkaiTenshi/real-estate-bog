@@ -13,6 +13,7 @@ jobs:
       - run:
           name: Start the application
           command: flask run --host=0.0.0.0 &
+          background: true
       - run:
           name: Run tests
           command: pytest
