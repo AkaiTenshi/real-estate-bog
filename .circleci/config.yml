@@ -2,12 +2,13 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/python:3.8
+      - image: cimg/python:3.8
 
     steps:
       - checkout
       - run: pip install pipenv
       - run: pipenv install
+      - run: pip install -r requirements.txt
       - run: python -m pytest tests/
       - run: |
           if [ "${CIRCLE_BRANCH}" == "main" ]; then
@@ -17,7 +18,6 @@ jobs:
           fi
 
 workflows:
-  version: 2
   build-and-deploy:
     jobs:
       - build:
