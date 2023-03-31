@@ -17,6 +17,7 @@ jobs:
             echo 'export DB_PASSWORD=$DB_PASSWORD' >> $BASH_ENV
             echo 'export DB_HOST=$DB_HOST' >> $BASH_ENV
             flask run
+            sleep 30
           background: true
       - run:
           name: Run tests
