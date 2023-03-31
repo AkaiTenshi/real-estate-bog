@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.8
-    working_directory: ~/repo
+    working_directory: /app
     steps:
       - checkout
       - run: python3 -m venv venv
