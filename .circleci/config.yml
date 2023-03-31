@@ -15,7 +15,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            flask run
+            flask run &
       - store_artifacts:
           path: server.log
 
