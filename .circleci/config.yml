@@ -16,7 +16,7 @@ jobs:
           name: Start Flask app
           command: |
             . venv/bin/activate && \
-            FLASK_APP=app.py FLASK_ENV=testing nohup flask run --host=0.0.0.0 > app.log 2>&1 &
+            nohup flask run &
             sleep 30
           background: true
       - run:
