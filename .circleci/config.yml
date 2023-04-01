@@ -17,9 +17,9 @@ jobs:
             . venv/bin/activate
             flask run
           background: true
-      - store_artifacts:
-          path: ~/real-estate-bog/server.log
-          destination: server.log
+      - run:
+          name: See log
+          command: cat server.log
 
 workflows:
   build-and-test:
