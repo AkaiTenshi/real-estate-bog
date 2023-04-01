@@ -13,17 +13,12 @@ jobs:
       - run:
           name: Run server in background
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            flask run --host=0.0.0.0
+            flask run --host=0.0.0.0 &
             sleep 30
-            cat server.log
           background: true
       - run:
           name: Run pytest
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
             pytest
 
 
