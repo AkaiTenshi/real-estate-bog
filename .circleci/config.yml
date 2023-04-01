@@ -16,10 +16,10 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             flask run
+            sleep 30
+            cat server.log
           background: true
-      - run:
-          name: See log
-          command: cat server.log
+
 
 workflows:
   build-and-test:
