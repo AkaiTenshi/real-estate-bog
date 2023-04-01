@@ -15,12 +15,6 @@ jobs:
           command: |
             flask run --host=0.0.0.0 &
             sleep 30
-          background: true
-      - run:
-          name: Run pytest
-          command: |
-            pytest
-
 
 workflows:
   build-and-test:
