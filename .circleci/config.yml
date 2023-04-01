@@ -5,7 +5,7 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.8
-    working_directory: ~/repo
+    working_directory: ~/real-estate-bog
     steps:
       - checkout
       - run: echo "Python on CircleCI"
@@ -15,9 +15,11 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            flask run &
+            flask run
+          background: true
       - store_artifacts:
-          path: server.log
+          path: ~/real-estate-bog/server.log
+          destination: server.log
 
 workflows:
   build-and-test:
