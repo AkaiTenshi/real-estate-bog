@@ -1,14 +1,7 @@
-import unittest
-import requests
+from app import app
 
-class TestApp(unittest.TestCase):
-    def setUp(self):
-        self.url = "http://127.0.0.1:5000"
 
-    def test_hello_world(self):
-        response = requests.get(f"{self.url}/")
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.text, "Hello, World!")
-
-if __name__ == "__main__":
-    unittest.main()
+def test_hello():
+    client = app.test_client()
+    response = client.get('/')
+    assert response.data == b'Hello, World!'
