@@ -8,3 +8,4 @@ def create_app(config_class=Config):
     # Initialize Flask extensions here
 
     # Register blueprints here
+    return app
