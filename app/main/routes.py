@@ -10,7 +10,7 @@ auth = KeycloakAuth(app)
 def index():
     return 'This is The Main Blueprint'
 
-
+# This is for testing the protect redirect from above
 @bp.route('/login')
 def login():
     return 'This is the Login Page'
