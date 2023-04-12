@@ -1,6 +1,6 @@
 from app.main import bp
 from auth import KeycloakAuth
-from flask import Flask
+from flask import Flask, render_template, session
 
 app = Flask(__name__)
 auth = KeycloakAuth(app)
@@ -8,9 +8,5 @@ auth = KeycloakAuth(app)
 @bp.route('/')
 @auth.protect('/')
 def index():
-    return 'This is The Main Blueprint'
-
-# This is for testing the protect redirect from above
-@bp.route('/login')
-def login():
-    return 'This is the Login Page'
+    current_user = auth.get_userinfo(session.get('access_token'))
+    return render_template('main/index.html', current_user=current_user)
