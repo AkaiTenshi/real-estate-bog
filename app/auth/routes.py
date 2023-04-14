@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, Flask, flash
 from flask import session, request
 from app.auth import bp
 from auth import KeycloakAuth
-from .forms import LoginForm, RegistrationForm
+from app.auth.forms import LoginForm, RegistrationForm
 
 app = Flask(__name__)
 auth = KeycloakAuth(app)
@@ -37,7 +37,7 @@ def register():
                 flash('Email already exists')
                 return redirect(url_for('auth.login'))
             if auth.register(username, password, email):
-                flash('Registration successful. Verify your email and login', 'message')
+                flash('Registration successful. Verify your email and login', 'success')
                 return redirect(url_for('auth.login'))
         else:
             flash('Invalid username or password', 'danger')
