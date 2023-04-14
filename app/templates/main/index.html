@@ -1,7 +1,55 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Welcome, {{ current_user.name }}!</h1>
-  <p>Your email is {{ current_user.email }}.</p>
-  <a href="{{ url_for('auth.logout') }}">Logout</a>
+  <!-- Hero section -->
+  <section class="hero-section">
+      <div class="row full-width align-items-center">
+        <div class="col-md-4">
+          <h1>Real Estate - AI Valuation Tool</h1>
+          <p class="lead">Make smarter investment decisions with RE - aiVT, an investment evaluation tool assisted by AI. Get a projected income or loss from a property you own or plan to buy by adding the price of the property, its type, expected tenants, cost to buy, and average cost to maintain. RE - aiVT calculates income based on your expected ROI. It also supports mortgage payment calculation with interest rates and can calculate the appropriate rent per tenant based on the mortgage terms.</p>
+          <a href="#" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+  </section>
+  <!-- Features section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature">
+            <i class="fas fa-check fa-3x"></i>
+            <h3>Easy to Use</h3>
+            <p>RE - aiVT is designed to be user-friendly and easy to use, so that anyone can use it without any technical skills.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature">
+            <i class="fas fa-tools fa-3x"></i>
+            <h3>Customizable</h3>
+            <p>RE - aiVT is highly customizable, allowing you to tailor it to your specific needs and preferences.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature">
+            <i class="fas fa-mobile-alt fa-3x"></i>
+            <h3>Responsive</h3>
+            <p>RE - aiVT is fully responsive, meaning it works seamlessly on all devices including desktops, tablets, and mobile devices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Call-to-action section -->
+  <section class="call-to-action">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h2>Ready to make better investment decisions?</h2>
+        </div>
+        <div class="col-md-4">
+          <a href="#" class="btn btn-primary">Get Started Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}

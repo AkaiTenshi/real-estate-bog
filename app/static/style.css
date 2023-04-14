@@ -2,7 +2,11 @@ body {
     background-color: #f0f8ff; /* light blue */
     font-family: 'Montserrat', sans-serif;
   }
-  
+  .row.full-width {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
   .btn {
     border-radius: 30px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
@@ -38,4 +42,116 @@ body {
     border-color: #f5c6cb;
     color: #721c24; /* dark red */
   }
-  
+  /* hero-section section */
+
+.hero-section .row {
+    background-image: url('img/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 15px;
+}
+
+.hero-section {
+  background-color: #fff;
+  padding: 0px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* features-section section */
+.features-section {
+  background-color: #f5f5f5;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.features-section p {
+  font-size: 1.5rem;
+}
+.feature {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-bottom: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.feature i {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.feature p {
+  font-size: 18px;
+  color: #6c757d;
+  flex-grow: 1;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+  background-color: #eaf2f8;
+}
+
+/* Call to action section */
+.call-to-action {
+  background-color: #007bff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.call-to-action h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.call-to-action p {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.call-to-action a {
+  background-color: #fff;
+  border-radius: 50px;
+  color: #007bff;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 15px 30px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.call-to-action a:hover {
+  background-color: #f5f5f5;
+}
