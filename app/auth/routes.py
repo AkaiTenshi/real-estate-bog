@@ -17,7 +17,7 @@ def login():
         if form.validate_on_submit():
             if auth.login(username, password):
                 session['access_token'] = auth.get_token(username, password)
-                return redirect(redirect_url or url_for('main.index'))
+                return redirect(redirect_url or url_for('profile.dashboard'))
         else:
             flash('Invalid username or password', 'danger')
     return render_template('auth/login.html', form=form)
